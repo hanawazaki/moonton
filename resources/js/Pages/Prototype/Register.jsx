@@ -62,8 +62,8 @@ const Register = () => {
                 </div>
               </div>
               <div className="grid space-y-[14px] mt-[30px]">
-                <Link>
-                  <Button type={"button"} variant="primary">
+                <Link href={route('prototype.dashboard')}>
+                  <Button>
                     <span className="text-base font-semibold">
                       Sign Up
                     </span>
