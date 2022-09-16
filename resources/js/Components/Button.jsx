@@ -10,7 +10,7 @@ Button.propTypes = {
     children: PropTypes.node,
 }
 
-export default function Button({ type = 'submit', className = '', processing, children, variant }) {
+export default function Button({ type = 'submit', className = '', processing, children, variant = 'primary' }) {
     return (
         <button
             type={type}

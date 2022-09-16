@@ -1,5 +1,8 @@
+@tailwind components;
+@tailwind utilities;
+
 .btn-primary {
-  @apply bg-alerange text-white;
+  @apply bg-alerange text-white !important;
 }
 
 .btn-warning {
