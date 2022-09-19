@@ -112,9 +112,11 @@ const Register = () => {
                                     </span>
                                 </Button>
                                 <Link href={route('login')}>
-                                    <span className="text-base text-white">
-                                        Sign In to My Account
-                                    </span>
+                                    <Button type={"button"} variant="light-outline">
+                                        <span className="text-base text-white">
+                                            Sign In to My Account
+                                        </span>
+                                    </Button>
                                 </Link>
 
                                 {/* <!-- <button type="submit" className="rounded-2xl bg-alerange py-[13px] text-center">
