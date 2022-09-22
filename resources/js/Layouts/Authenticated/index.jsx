@@ -3,7 +3,7 @@ import SideBar from './Sidebar'
 import Topbar from './Topbar'
 
 Topbar
-const index = ({ children }) => {
+const Index = ({ auth, children }) => {
   return (
     <>
       <div className="mx-auto max-w-screen hidden lg:block">
@@ -15,7 +15,7 @@ const index = ({ children }) => {
         <div className="ml-[300px] px-[50px]">
           <div className="py-10 flex flex-col gap-[50px]">
             {/* topbar */}
-            <Topbar />
+            <Topbar name={auth.user.name} />
             {/* end topbar */}
             <main>{children}</main>
           </div>
@@ -32,4 +32,4 @@ const index = ({ children }) => {
   )
 }
 
-export default index
+export default Index

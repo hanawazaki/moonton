@@ -29,7 +29,7 @@ const Register = () => {
 
         post(route('register'));
 
-        // console.log(data, 'data');
+        console.log(data, 'data');
     };
 
     return (
@@ -118,12 +118,6 @@ const Register = () => {
                                         </span>
                                     </Button>
                                 </Link>
-
-                                {/* <!-- <button type="submit" className="rounded-2xl bg-alerange py-[13px] text-center">
-                <span className="text-base font-semibold">
-                  Sign Up
-                </span>
-              </button> --> */}
                             </div>
                         </form>
                     </div>
