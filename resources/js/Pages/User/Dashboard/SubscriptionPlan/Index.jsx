@@ -1,10 +1,18 @@
 import React from 'react'
 import Authenticated from '@/Layouts/Authenticated/Index'
 import SubscriptionCard from '@/Components/SubscriptionCard'
+import { Inertia } from '@inertiajs/inertia'
 
-const SubscriptionPlan = () => {
+const SubscriptionPlan = ({ auth, subscriptionPlans }) => {
+  const selectSubscription = id => {
+    Inertia.post(route('user.dashboard.subscriptionPlan.userSubscribe', {
+      subscriptionPlan: id
+    })
+    );
+  };
+
   return (
-    <Authenticated>
+    <Authenticated auth={auth}>
       <div className="py-20 flex flex-col items-center">
         <div className="text-black font-semibold text-[26px] mb-3">
           Pricing for Everyone
@@ -16,18 +24,19 @@ const SubscriptionPlan = () => {
         {/* <!-- Pricing Card --> */}
         <div className="flex justify-center gap-10 mt-[70px]">
           {/* <!-- Basic --> */}
-          <SubscriptionCard
-            name={"Basic"}
-            price={50000}
-            durationInMonth={1}
-            features={['feature 1', 'feature 2', 'feature 3']}
-          />
+          {subscriptionPlans.map((plan) => (
+            <SubscriptionCard
+              name={plan.name}
+              price={plan.price}
+              durationInMonth={plan.active_period_in_month}
+              features={JSON.parse(plan.features)}
+              isPremium={plan.name === "Premium"}
+              key={plan.id}
+              onSelectSubscription={() => selectSubscription(plan.id)}
+            />
+          ))}
           {/* <!-- For Greatest --> */}
-          <SubscriptionCard isPremium
-            name={"Premium"}
-            price={70000}
-            durationInMonth={3}
-            features={['feature 1', 'feature 2', 'feature 3']} />
+
         </div>
         {/* <!-- /Pricing Card --> */}
       </div>
