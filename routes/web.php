@@ -18,6 +18,8 @@ use App\Http\Controllers\User\SubscriptionPlanController;
 |
 */
 
+route::post('midtrans/notification', [SubscriptionPlanController::class, 'midtransCallback']);
+
 Route::redirect('/', '/login');
 
 // Route::get('/dashboard', function () {
@@ -58,6 +60,7 @@ Route::prefix('prototype')->name('prototype.')->group(function () {
         return Inertia::render('Prototype/Movie/Show');
     })->name('movie.show');
 });
+
 
 
 require __DIR__ . '/auth.php';
