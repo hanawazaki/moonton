@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class UserSubscription extends Model
 {
-    use HasFactory,SoftDeletes;
+    use HasFactory, SoftDeletes;
 
     protected $fillable = [
         "user_id",
@@ -17,7 +17,7 @@ class UserSubscription extends Model
         "price",
         "expired_date",
         "payment_status",
-        "snapToken",
+        "snap_token",
     ];
 
     public function subscriptionPlan(): BelongsTo
